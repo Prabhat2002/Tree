@@ -74,19 +74,6 @@ class Solution
           total=total+ans[n-1][i];
      return total;
     }
-    map<int,int>mp;
-    void leafOrder(TreeNode* root,int level)
-    {
-        if(root!=NULL)
-           return;
-        if(root->left==NULL && root->right==NULL)
-        {
-            mp[level]=mp[level]+root->val;
-            return;
-        }
-        leafOrder(root->left,level+1);
-        leafOrder(root->right,level+1);
-    }
     int deepestLeavesSum(TreeNode* root) 
     {
         return levelOrder(root);
